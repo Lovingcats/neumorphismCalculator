@@ -43,9 +43,11 @@ class _CalculaotrState extends State<CalculatorLendering> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: null,
-      body: Center(
-        child: Column(
-          children: [],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [Text("hello")],
+          ),
         ),
       ),
     );
