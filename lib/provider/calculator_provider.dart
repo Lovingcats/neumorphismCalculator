@@ -5,7 +5,7 @@ import 'package:neumorphism_calculator/common/colors.dart';
 class CalculatorProvider extends ChangeNotifier {
   String _result = '';
   Color? _iconcolor = Colors.black;
-  Color? _textcolor = Colors.white;
+  Color? _textcolor = Colors.black;
 
   String get result => _result;
   Color? get iconcolor => _iconcolor;
@@ -33,9 +33,9 @@ class CalculatorProvider extends ChangeNotifier {
 
   void changeTextColor(BuildContext context) {
     if (NeumorphicTheme.isUsingDark(context)) {
-      _textcolor = Colors.white;
+      _textcolor = CommonColor.blackBackgroundColor;
     } else {
-      _textcolor = Colors.black;
+      _textcolor = CommonColor.whiteBackgroundColor;
     }
     notifyListeners();
   }
