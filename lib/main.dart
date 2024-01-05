@@ -4,6 +4,7 @@ import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neumorphism_calculator/common/colors.dart';
 import 'package:neumorphism_calculator/provider/calculator_provider.dart';
+import 'package:neumorphism_calculator/widget/gradint_text.dart';
 import 'package:provider/provider.dart';
 import 'package:neumorphism_calculator/widget/calculator_widget.dart';
 void main() {
@@ -59,24 +60,27 @@ class _CalculaotrState extends State<CalculatorLendering> {
       body: SafeArea(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-                    // NeumorphicButton(
-                    //   onPressed: () {
-                    //     calculatorProvider.changeTheme(context);
-                    //     calculatorProvider.changeTextColor(context);
-                    //     calculatorProvider.changeIconColor(context);
-                    //   },
-                    //   style: const NeumorphicStyle(
-                    //     shape: NeumorphicShape.concave,
-                    //     boxShape: NeumorphicBoxShape.circle(),
-                    //   ),
-                    //   padding: EdgeInsets.all(12.w),
-                    //   child: Icon(
-                    //     Icons.favorite_border,
-                    //     color: calculatorProvider.iconcolor,
-                    //   ),
-                    // ),
+              Padding(padding: EdgeInsets.only(
+                top: 105.h, right: 15.w
+              ), child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GradientText("2,020 x 2 - 1,942", gradient: CommonColor.textGradient, style: TextStyle(
+                    fontSize: 13.sp
+                  ),)
+              ],),)
+              // NeumorphicButton(
+              //   onPressed: () {
+
+              //   },
+              //   style: const NeumorphicStyle(
+              //     shape: NeumorphicShape.concave,
+              //     boxShape: NeumorphicBoxShape.circle(),
+              //   ),
+              //   padding: EdgeInsets.all(12.w),
+              //   child: GradientText("C", gradient: CommonColor.textGradient)
+              // ),
             ],
           ),
         ),
