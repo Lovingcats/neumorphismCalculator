@@ -7,6 +7,7 @@ import 'package:neumorphism_calculator/provider/calculator_provider.dart';
 import 'package:neumorphism_calculator/widget/gradint_text.dart';
 import 'package:provider/provider.dart';
 import 'package:neumorphism_calculator/widget/calculator_widget.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -61,24 +62,47 @@ class _CalculaotrState extends State<CalculatorLendering> {
         child: Center(
           child: Column(
             children: [
-              Padding(padding: EdgeInsets.only(
-                top: 105.h, right: 15.w
-              ), child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      GradientText("2,020 x 2 - 1,942", gradient: CommonColor.textGradient, style: TextStyle(
-                        fontSize: 13.sp
-                      ),),
-                      Text("2,098", style: TextStyle(
-                        fontSize: 50.sp, color: calculatorProvider.textcolor, fontWeight: FontWeight.w400 
-                      ),)
-                    ],
-                  )
-                  
-              ],),)
+              Padding(
+                padding: EdgeInsets.only(top: 105.h, right: 15.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        GradientText(
+                          "2,020 x 2 - 1,942",
+                          gradient: CommonColor.textGradient,
+                          style: TextStyle(fontSize: 13.sp),
+                        ),
+                        Text(
+                          "2,098",
+                          style: TextStyle(
+                              fontSize: 50.sp,
+                              color: calculatorProvider.textcolor,
+                              fontWeight: FontWeight.w400),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Flexible(
+                  fit: FlexFit.tight,
+                  child: Container(
+                    margin: EdgeInsets.only(
+                        top: 25.h, bottom: 40.h, left: 12.w, right: 12.w),
+                    color: Colors.white,
+                    width: double.infinity.w,
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [],
+                        )
+                      ],
+                    ),
+                  ))
+
               // NeumorphicButton(
               //   onPressed: () {
 
@@ -96,5 +120,4 @@ class _CalculaotrState extends State<CalculatorLendering> {
       ),
     );
   }
-
 }
