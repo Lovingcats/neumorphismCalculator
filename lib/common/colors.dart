@@ -8,5 +8,5 @@ class CommonColor {
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter);
   static Color blackBackgroundColor = const Color(0xff393d45);
-  static Color whiteBackgroundColor = Colors.white;
+  static Color whiteBackgroundColor = const Color(0xffF2F2F2);
 }
