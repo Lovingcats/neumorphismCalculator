@@ -66,9 +66,18 @@ class _CalculaotrState extends State<CalculatorLendering> {
               ), child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  GradientText("2,020 x 2 - 1,942", gradient: CommonColor.textGradient, style: TextStyle(
-                    fontSize: 13.sp
-                  ),)
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      GradientText("2,020 x 2 - 1,942", gradient: CommonColor.textGradient, style: TextStyle(
+                        fontSize: 13.sp
+                      ),),
+                      Text("2,098", style: TextStyle(
+                        fontSize: 50.sp, color: calculatorProvider.textcolor, fontWeight: FontWeight.w400 
+                      ),)
+                    ],
+                  )
+                  
               ],),)
               // NeumorphicButton(
               //   onPressed: () {
