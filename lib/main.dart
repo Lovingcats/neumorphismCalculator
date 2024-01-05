@@ -1,12 +1,11 @@
+import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neumorphism_calculator/common/colors.dart';
 import 'package:neumorphism_calculator/provider/calculator_provider.dart';
-import 'package:neumorphism_calculator/widget/gradint_text.dart';
 import 'package:provider/provider.dart';
-import 'package:day_night_switcher/day_night_switcher.dart';
-
+import 'package:neumorphism_calculator/widget/calculator_widget.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -56,34 +55,7 @@ class _CalculaotrState extends State<CalculatorLendering> {
     var calculatorProvider = Provider.of<CalculatorProvider>(context);
     return Scaffold(
       backgroundColor: NeumorphicTheme.baseColor(context),
-      appBar: AppBar(
-        leadingWidth: 78.w,
-        backgroundColor: NeumorphicTheme.of(context)!.isUsingDark ? CommonColor.blackBackgroundColor : CommonColor.whiteBackgroundColor,
-        leading: Padding(
-          padding: EdgeInsets.only(
-            left: 10.w
-          ),
-          child: InkWell(
-                        splashColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        onTap: (){
-                          calculatorProvider.changeTheme(context);
-                          calculatorProvider.changeTextColor(context);
-                          calculatorProvider.changeIconColor(context);
-                        },
-                        child: AbsorbPointer(
-                          child: SizedBox(
-                            child: DayNightSwitcher(
-                                  isDarkModeEnabled: NeumorphicTheme.of(context)!.isUsingDark,
-                                  onStateChanged: (isDarkModeEnabled) {
-                                  },
-                            ),
-                          ),
-                        ),
-                      ),
-        ),
-      ),
+      appBar: cAppbar(context, calculatorProvider),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -111,4 +83,5 @@ class _CalculaotrState extends State<CalculatorLendering> {
       ),
     );
   }
+
 }
