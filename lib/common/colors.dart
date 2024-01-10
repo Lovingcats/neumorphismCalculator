@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CommonColor {
-  static Color beginCalculatorColor = const Color.fromARGB(255, 50, 216, 245);
-  static Color endCalculatorColor = const Color.fromARGB(255, 21, 190, 196);
+  static Color beginCalculatorColor = const Color(0xff8dd8d7);
+  static Color endCalculatorColor = const Color(0xff71b0da);
   static Gradient textGradient = LinearGradient(
       colors: [beginCalculatorColor, endCalculatorColor],
       begin: Alignment.topCenter,
