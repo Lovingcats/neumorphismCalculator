@@ -5,7 +5,7 @@ import 'package:neumorphism_calculator/common/colors.dart';
 class CalculatorProvider extends ChangeNotifier {
   String _result = '';
   Color? _iconcolor = Colors.black;
-  Color? _textcolor = Colors.black;
+  Color? _textcolor = Colors.white;
 
   String get result => _result;
   Color? get iconcolor => _iconcolor;
