@@ -62,31 +62,7 @@ class _CalculaotrState extends State<CalculatorLendering> {
         child: Center(
           child: Column(
             children: [
-              Padding(
-                padding: EdgeInsets.only(top: 85.h, right: 15.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        GradientText(
-                          "2,020 x 2 - 1,942",
-                          gradient: CommonColor.textGradient,
-                          style: TextStyle(fontSize: 13.sp),
-                        ),
-                        Text(
-                          "2,098",
-                          style: TextStyle(
-                              fontSize: 50.sp,
-                              color: calculatorProvider.textcolor,
-                              fontWeight: FontWeight.w400),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ),
+              cCalculateText(calculatorProvider),
               Flexible(
                   fit: FlexFit.tight,
                   child: Container(
