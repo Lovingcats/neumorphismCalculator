@@ -93,7 +93,6 @@ class _CalculaotrState extends State<CalculatorLendering> {
                     margin: EdgeInsets.only(
                         top: 25.h, bottom: 40.h, left: 12.w, right: 12.w),
                     width: double.infinity.w,
-                    color: Colors.white,
                     child: Column(
                       children: [
                         Flexible(
@@ -108,8 +107,10 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                       margin: EdgeInsets.all(10.w),
                                       onPressed: () {},
                                       style: const NeumorphicStyle(
-                                        shape: NeumorphicShape.concave,
+                                        shape: NeumorphicShape.convex,
                                         boxShape: NeumorphicBoxShape.circle(),
+                                        depth: 2,
+                                        intensity: 0.55,
                                       ),
                                       child: Column(
                                         mainAxisAlignment:
@@ -134,6 +135,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                       style: const NeumorphicStyle(
                                         shape: NeumorphicShape.concave,
                                         boxShape: NeumorphicBoxShape.circle(),
+                                        depth: 2,
+                                        intensity: 0.55,
                                       ),
                                       child: Column(
                                         mainAxisAlignment:
@@ -158,6 +161,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                       style: const NeumorphicStyle(
                                         shape: NeumorphicShape.concave,
                                         boxShape: NeumorphicBoxShape.circle(),
+                                        depth: 2,
+                                        intensity: 0.55,
                                       ),
                                       child: Column(
                                         mainAxisAlignment:
@@ -182,6 +187,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                       style: const NeumorphicStyle(
                                         shape: NeumorphicShape.concave,
                                         boxShape: NeumorphicBoxShape.circle(),
+                                        depth: 2,
+                                        intensity: 0.55,
                                       ),
                                       child: Column(
                                         mainAxisAlignment:
@@ -212,6 +219,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -238,6 +247,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -264,6 +275,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -290,6 +303,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -319,6 +334,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -345,6 +362,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -371,6 +390,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -397,6 +418,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -426,6 +449,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -452,6 +477,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -478,6 +505,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -504,6 +533,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -533,6 +564,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -559,6 +592,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                     style: const NeumorphicStyle(
                                       shape: NeumorphicShape.concave,
                                       boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 2,
+                                      intensity: 0.55,
                                     ),
                                     child: Column(
                                       mainAxisAlignment:
@@ -593,6 +628,8 @@ class _CalculaotrState extends State<CalculatorLendering> {
                                               NeumorphicBoxShape.roundRect(
                                                   BorderRadius.circular(
                                                       1000.r)),
+                                          depth: 2,
+                                          intensity: 0.55,
                                           color: Colors.transparent),
                                       child: Column(
                                         mainAxisAlignment:
