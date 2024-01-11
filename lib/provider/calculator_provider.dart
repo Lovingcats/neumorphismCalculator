@@ -11,7 +11,7 @@ class CalculatorProvider extends ChangeNotifier {
   Color? get iconcolor => _iconcolor;
   Color? get textcolor => _textcolor;
 
-  void example() {
+  void addResult() {
     notifyListeners();
   }
 
