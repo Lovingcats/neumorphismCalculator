@@ -125,6 +125,14 @@ Widget makeFlexButton(String text, bool isGradient,
   );
 }
 
+Widget _buildRow(List<Widget> children) {
+  return Expanded(
+    child: Row(
+      children: children,
+    ),
+  );
+}
+
 Flexible cNumber(BuildContext context, CalculatorProvider calculatorProvider) {
   return Flexible(
       fit: FlexFit.tight,
@@ -134,50 +142,35 @@ Flexible cNumber(BuildContext context, CalculatorProvider calculatorProvider) {
         width: double.infinity.w,
         child: Column(
           children: [
-            Flexible(
-                flex: 1,
-                fit: FlexFit.tight,
-                child: Row(children: [
-                  makeFlexButton("C", true, calculatorProvider, 1),
-                  makeFlexButton("+/-", true, calculatorProvider, 1),
-                  makeFlexButton("%", true, calculatorProvider, 1),
-                  makeFlexButton("÷", true, calculatorProvider, 1),
-                ])),
-            Flexible(
-                flex: 1,
-                fit: FlexFit.tight,
-                child: Row(children: [
-                  makeFlexButton("7", false, calculatorProvider, 1),
-                  makeFlexButton("8", false, calculatorProvider, 1),
-                  makeFlexButton("9", false, calculatorProvider, 1),
-                  makeFlexButton("×", true, calculatorProvider, 1),
-                ])),
-            Flexible(
-                flex: 1,
-                fit: FlexFit.tight,
-                child: Row(children: [
-                  makeFlexButton("4", false, calculatorProvider, 1),
-                  makeFlexButton("5", false, calculatorProvider, 1),
-                  makeFlexButton("6", false, calculatorProvider, 1),
-                  makeFlexButton("-", true, calculatorProvider, 1),
-                ])),
-            Flexible(
-                flex: 1,
-                fit: FlexFit.tight,
-                child: Row(children: [
-                  makeFlexButton("1", false, calculatorProvider, 1),
-                  makeFlexButton("2", false, calculatorProvider, 1),
-                  makeFlexButton("3", false, calculatorProvider, 1),
-                  makeFlexButton("+", true, calculatorProvider, 1),
-                ])),
-            Flexible(
-                flex: 1,
-                fit: FlexFit.tight,
-                child: Row(children: [
-                  makeFlexButton("0", false, calculatorProvider, 1),
-                  makeFlexButton(",", false, calculatorProvider, 1),
-                  makeFlexButton("=", false, calculatorProvider, 2),
-                ])),
+            _buildRow([
+              makeFlexButton("C", true, calculatorProvider, 1),
+              makeFlexButton("+/-", true, calculatorProvider, 1),
+              makeFlexButton("%", true, calculatorProvider, 1),
+              makeFlexButton("÷", true, calculatorProvider, 1),
+            ]),
+            _buildRow([
+              makeFlexButton("7", false, calculatorProvider, 1),
+              makeFlexButton("8", false, calculatorProvider, 1),
+              makeFlexButton("9", false, calculatorProvider, 1),
+              makeFlexButton("×", true, calculatorProvider, 1),
+            ]),
+            _buildRow([
+              makeFlexButton("4", false, calculatorProvider, 1),
+              makeFlexButton("5", false, calculatorProvider, 1),
+              makeFlexButton("6", false, calculatorProvider, 1),
+              makeFlexButton("-", true, calculatorProvider, 1),
+            ]),
+            _buildRow([
+              makeFlexButton("1", false, calculatorProvider, 1),
+              makeFlexButton("2", false, calculatorProvider, 1),
+              makeFlexButton("3", false, calculatorProvider, 1),
+              makeFlexButton("+", true, calculatorProvider, 1),
+            ]),
+            _buildRow([
+              makeFlexButton("0", false, calculatorProvider, 1),
+              makeFlexButton(",", false, calculatorProvider, 1),
+              makeFlexButton("=", false, calculatorProvider, 2),
+            ]),
           ],
         ),
       ));
