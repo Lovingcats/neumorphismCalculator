@@ -4,12 +4,12 @@ import 'package:neumorphism_calculator/common/colors.dart';
 
 class CalculatorProvider extends ChangeNotifier {
   String _result = '';
-  Color? _iconcolor = Colors.black;
-  Color? _textcolor = Colors.white;
+  Color _iconcolor = Colors.black;
+  Color _textcolor = Colors.black;
 
   String get result => _result;
-  Color? get iconcolor => _iconcolor;
-  Color? get textcolor => _textcolor;
+  Color get iconcolor => _iconcolor;
+  Color get textcolor => _textcolor;
 
   void addResult() {
     notifyListeners();
