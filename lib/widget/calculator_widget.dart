@@ -64,6 +64,67 @@ Padding cCalculateText(CalculatorProvider calculatorProvider) {
   );
 }
 
+Widget makeFlexButton(String text, bool isGradient,
+    CalculatorProvider calculatorProvider, int flex) {
+  return Flexible(
+    fit: FlexFit.tight,
+    flex: flex,
+    child: flex == 2
+        ? Container(
+            margin: EdgeInsets.all(10.w),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(1000.r)),
+                gradient: CommonColor.textGradient),
+            child: NeumorphicButton(
+                onPressed: () {},
+                style: NeumorphicStyle(
+                    shape: NeumorphicShape.concave,
+                    boxShape: NeumorphicBoxShape.roundRect(
+                        BorderRadius.circular(1000.r)),
+                    depth: 2,
+                    intensity: 0.55,
+                    color: Colors.transparent),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "=",
+                      style: TextStyle(fontSize: 27.sp, color: Colors.white),
+                    ),
+                  ],
+                )),
+          )
+        : NeumorphicButton(
+            margin: EdgeInsets.all(10.w),
+            onPressed: () {},
+            style: const NeumorphicStyle(
+              shape: NeumorphicShape.concave,
+              boxShape: NeumorphicBoxShape.circle(),
+              depth: 2,
+              intensity: 0.55,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                isGradient
+                    ? GradientText(
+                        text,
+                        gradient: CommonColor.textGradient,
+                        style: TextStyle(fontSize: 20.sp),
+                      )
+                    : Text(
+                        text,
+                        style: TextStyle(
+                            fontSize: 20.sp,
+                            color: calculatorProvider.textcolor),
+                      )
+              ],
+            )),
+  );
+}
+
 Flexible cNumber(BuildContext context, CalculatorProvider calculatorProvider) {
   return Flexible(
       fit: FlexFit.tight,
@@ -76,503 +137,46 @@ Flexible cNumber(BuildContext context, CalculatorProvider calculatorProvider) {
             Flexible(
                 flex: 1,
                 fit: FlexFit.tight,
-                child: Row(
-                  children: [
-                    Flexible(
-                      fit: FlexFit.tight,
-                      flex: 1,
-                      child: NeumorphicButton(
-                          margin: EdgeInsets.all(10.w),
-                          onPressed: () {},
-                          style: const NeumorphicStyle(
-                            shape: NeumorphicShape.convex,
-                            boxShape: NeumorphicBoxShape.circle(),
-                            depth: 2,
-                            intensity: 0.55,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              GradientText(
-                                "C",
-                                gradient: CommonColor.textGradient,
-                                style: TextStyle(fontSize: 20.sp),
-                              ),
-                            ],
-                          )),
-                    ),
-                    Flexible(
-                      fit: FlexFit.tight,
-                      flex: 1,
-                      child: NeumorphicButton(
-                          margin: EdgeInsets.all(10.w),
-                          onPressed: () {},
-                          style: const NeumorphicStyle(
-                            shape: NeumorphicShape.concave,
-                            boxShape: NeumorphicBoxShape.circle(),
-                            depth: 2,
-                            intensity: 0.55,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              GradientText(
-                                "+/-",
-                                gradient: CommonColor.textGradient,
-                                style: TextStyle(fontSize: 20.sp),
-                              ),
-                            ],
-                          )),
-                    ),
-                    Flexible(
-                      fit: FlexFit.tight,
-                      flex: 1,
-                      child: NeumorphicButton(
-                          margin: EdgeInsets.all(10.w),
-                          onPressed: () {},
-                          style: const NeumorphicStyle(
-                            shape: NeumorphicShape.concave,
-                            boxShape: NeumorphicBoxShape.circle(),
-                            depth: 2,
-                            intensity: 0.55,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              GradientText(
-                                "%",
-                                gradient: CommonColor.textGradient,
-                                style: TextStyle(fontSize: 20.sp),
-                              ),
-                            ],
-                          )),
-                    ),
-                    Flexible(
-                      fit: FlexFit.tight,
-                      flex: 1,
-                      child: NeumorphicButton(
-                          margin: EdgeInsets.all(10.w),
-                          onPressed: () {},
-                          style: const NeumorphicStyle(
-                            shape: NeumorphicShape.concave,
-                            boxShape: NeumorphicBoxShape.circle(),
-                            depth: 2,
-                            intensity: 0.55,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              GradientText(
-                                "÷",
-                                gradient: CommonColor.textGradient,
-                                style: TextStyle(fontSize: 22.sp),
-                              ),
-                            ],
-                          )),
-                    ),
-                  ],
-                )),
-            Flexible(
-                flex: 1,
-                fit: FlexFit.tight,
                 child: Row(children: [
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "7",
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  color: calculatorProvider.textcolor),
-                            )
-                          ],
-                        )),
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "8",
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  color: calculatorProvider.textcolor),
-                            )
-                          ],
-                        )),
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "9",
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  color: calculatorProvider.textcolor),
-                            )
-                          ],
-                        )),
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            GradientText(
-                              "×",
-                              gradient: CommonColor.textGradient,
-                              style: TextStyle(fontSize: 20.sp),
-                            ),
-                          ],
-                        )),
-                  )
+                  makeFlexButton("C", true, calculatorProvider, 1),
+                  makeFlexButton("+/-", true, calculatorProvider, 1),
+                  makeFlexButton("%", true, calculatorProvider, 1),
+                  makeFlexButton("÷", true, calculatorProvider, 1),
                 ])),
             Flexible(
                 flex: 1,
                 fit: FlexFit.tight,
                 child: Row(children: [
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "4",
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  color: calculatorProvider.textcolor),
-                            )
-                          ],
-                        )),
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "5",
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  color: calculatorProvider.textcolor),
-                            )
-                          ],
-                        )),
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "6",
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  color: calculatorProvider.textcolor),
-                            )
-                          ],
-                        )),
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            GradientText(
-                              "-",
-                              gradient: CommonColor.textGradient,
-                              style: TextStyle(fontSize: 20.sp),
-                            ),
-                          ],
-                        )),
-                  )
+                  makeFlexButton("7", false, calculatorProvider, 1),
+                  makeFlexButton("8", false, calculatorProvider, 1),
+                  makeFlexButton("9", false, calculatorProvider, 1),
+                  makeFlexButton("×", true, calculatorProvider, 1),
                 ])),
             Flexible(
                 flex: 1,
                 fit: FlexFit.tight,
                 child: Row(children: [
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "1",
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  color: calculatorProvider.textcolor),
-                            )
-                          ],
-                        )),
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "2",
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  color: calculatorProvider.textcolor),
-                            )
-                          ],
-                        )),
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "3",
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  color: calculatorProvider.textcolor),
-                            )
-                          ],
-                        )),
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            GradientText(
-                              "+",
-                              gradient: CommonColor.textGradient,
-                              style: TextStyle(fontSize: 20.sp),
-                            ),
-                          ],
-                        )),
-                  )
+                  makeFlexButton("4", false, calculatorProvider, 1),
+                  makeFlexButton("5", false, calculatorProvider, 1),
+                  makeFlexButton("6", false, calculatorProvider, 1),
+                  makeFlexButton("-", true, calculatorProvider, 1),
                 ])),
             Flexible(
                 flex: 1,
                 fit: FlexFit.tight,
                 child: Row(children: [
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "0",
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  color: calculatorProvider.textcolor),
-                            )
-                          ],
-                        )),
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 1,
-                    child: NeumorphicButton(
-                        margin: EdgeInsets.all(10.w),
-                        onPressed: () {},
-                        style: const NeumorphicStyle(
-                          shape: NeumorphicShape.concave,
-                          boxShape: NeumorphicBoxShape.circle(),
-                          depth: 2,
-                          intensity: 0.55,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              ",",
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  color: calculatorProvider.textcolor),
-                            )
-                          ],
-                        )),
-                  ),
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: 2,
-                    child: Container(
-                      margin: EdgeInsets.all(10.w),
-                      decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(1000.r)),
-                          gradient: CommonColor.textGradient),
-                      child: NeumorphicButton(
-                          onPressed: () {},
-                          style: NeumorphicStyle(
-                              shape: NeumorphicShape.concave,
-                              boxShape: NeumorphicBoxShape.roundRect(
-                                  BorderRadius.circular(1000.r)),
-                              depth: 2,
-                              intensity: 0.55,
-                              color: Colors.transparent),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                "=",
-                                style: TextStyle(
-                                    fontSize: 27.sp, color: Colors.white),
-                              ),
-                            ],
-                          )),
-                    ),
-                  )
+                  makeFlexButton("1", false, calculatorProvider, 1),
+                  makeFlexButton("2", false, calculatorProvider, 1),
+                  makeFlexButton("3", false, calculatorProvider, 1),
+                  makeFlexButton("+", true, calculatorProvider, 1),
+                ])),
+            Flexible(
+                flex: 1,
+                fit: FlexFit.tight,
+                child: Row(children: [
+                  makeFlexButton("0", false, calculatorProvider, 1),
+                  makeFlexButton(",", false, calculatorProvider, 1),
+                  makeFlexButton("=", false, calculatorProvider, 2),
                 ])),
           ],
         ),
