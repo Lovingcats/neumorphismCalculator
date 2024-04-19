@@ -1,5 +1,4 @@
 import 'package:day_night_switcher/day_night_switcher.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neumorphism_calculator/common/colors.dart';
@@ -46,7 +45,7 @@ Padding cCalculateText(CalculatorProvider calculatorProvider) {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             GradientText(
-              "2,020 x 2 - 1,942",
+              calculatorProvider.formulaText,
               gradient: CommonColor.textGradient,
               style: TextStyle(fontSize: 13.sp),
             ),
@@ -76,7 +75,9 @@ Widget makeFlexButton(String text, bool isGradient,
                 borderRadius: BorderRadius.all(Radius.circular(1000.r)),
                 gradient: CommonColor.textGradient),
             child: NeumorphicButton(
-                onPressed: () {},
+                onPressed: () {
+                  print("Hello");
+                },
                 style: NeumorphicStyle(
                     shape: NeumorphicShape.concave,
                     boxShape: NeumorphicBoxShape.roundRect(
@@ -97,7 +98,9 @@ Widget makeFlexButton(String text, bool isGradient,
           )
         : NeumorphicButton(
             margin: EdgeInsets.all(10.w),
-            onPressed: () {},
+            onPressed: () {
+              calculatorProvider.addFormula(text);
+            },
             style: const NeumorphicStyle(
               shape: NeumorphicShape.concave,
               boxShape: NeumorphicBoxShape.circle(),
@@ -169,7 +172,7 @@ Flexible cNumber(BuildContext context, CalculatorProvider calculatorProvider) {
             _buildRow([
               makeFlexButton("0", false, calculatorProvider, 1),
               makeFlexButton(",", false, calculatorProvider, 1),
-              makeFlexButton("=", false, calculatorProvider, 2),
+              makeFlexButton("=", true, calculatorProvider, 2),
             ]),
           ],
         ),
