@@ -50,7 +50,7 @@ Padding cCalculateText(CalculatorProvider calculatorProvider) {
               style: TextStyle(fontSize: 13.sp),
             ),
             Text(
-              "2,098",
+              calculatorProvider.result,
               style: TextStyle(
                   fontSize: 50.sp,
                   color: calculatorProvider.textcolor,
@@ -76,7 +76,7 @@ Widget makeFlexButton(String text, bool isGradient,
                 gradient: CommonColor.textGradient),
             child: NeumorphicButton(
                 onPressed: () {
-                  print("Hello");
+                  calculatorProvider.addFormula(text);
                 },
                 style: NeumorphicStyle(
                     shape: NeumorphicShape.concave,
@@ -148,8 +148,8 @@ Flexible cNumber(BuildContext context, CalculatorProvider calculatorProvider) {
             _buildRow([
               makeFlexButton("C", true, calculatorProvider, 1),
               makeFlexButton("+/-", true, calculatorProvider, 1),
-              makeFlexButton("%", true, calculatorProvider, 1),
               makeFlexButton("÷", true, calculatorProvider, 1),
+              makeFlexButton("%", true, calculatorProvider, 1),
             ]),
             _buildRow([
               makeFlexButton("7", false, calculatorProvider, 1),
