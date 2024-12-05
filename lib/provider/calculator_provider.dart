@@ -16,7 +16,6 @@ class CalculatorProvider extends ChangeNotifier {
   //숫자 입력시 문자열에 더해가는 형식
   void addFormula(String text){
     _formulaText += text;
-    print(_formulaText);
     notifyListeners();
   }
 

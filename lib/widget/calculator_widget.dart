@@ -171,7 +171,7 @@ Flexible cNumber(BuildContext context, CalculatorProvider calculatorProvider) {
             ]),
             _buildRow([
               makeFlexButton("0", false, calculatorProvider, 1),
-              makeFlexButton(",", false, calculatorProvider, 1),
+              makeFlexButton(".", false, calculatorProvider, 1),
               makeFlexButton("=", true, calculatorProvider, 2),
             ]),
           ],
