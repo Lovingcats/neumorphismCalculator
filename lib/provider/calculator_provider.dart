@@ -7,6 +7,8 @@ class CalculatorProvider extends ChangeNotifier {
   String _formulaText = '';
   Color _iconcolor = Colors.black;
   Color _textcolor = Colors.black;
+  List<String> numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+  List<String> signs = ["+", "-", "%", "×"];
 
   String get result => _result;
   String get formulaText => _formulaText;
@@ -15,7 +17,12 @@ class CalculatorProvider extends ChangeNotifier {
 
   //숫자 입력시 문자열에 더해가는 형식
   void addFormula(String text){
-    _formulaText += text;
+     if (numbers.contains(text)) {
+      _formulaText += text;
+     }
+     if (signs.contains(text) && !signs.contains(_formulaText[_formulaText.length])) {
+      _formulaText += text;
+     }
     notifyListeners();
   }
 
